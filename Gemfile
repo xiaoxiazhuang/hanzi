@@ -24,13 +24,10 @@ end
 
 gem 'jquery-rails'
 
-group :test do
+group :test, :development do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
-end
-
-group :test, :development do
   gem 'rspec-rails'
   gem 'launchy'
 end

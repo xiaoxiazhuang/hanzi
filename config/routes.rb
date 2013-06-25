@@ -1,4 +1,11 @@
 Hanzi::Application.routes.draw do
+
+  resources :flashcard_sets do
+    resources :flashcards
+  end
+
+  root :to => 'flashcard_sets#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

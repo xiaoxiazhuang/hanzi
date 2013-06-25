@@ -1,0 +1,3 @@
+<% @flashcard_sets.each do |flashcard_set| %>
+  <%= link_to "Start Set", flashcard_set_flashcard_path(flashcard_set, flashcard_set.flashcards.first) %>
+<% end %>

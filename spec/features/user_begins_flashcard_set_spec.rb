@@ -15,7 +15,7 @@ feature 'User begins flashcard set', %q{
 
     visit root_path
 
-    click_button 'Start Set'
+    click_link 'Start Set'
 
     page.should have_content(flashcard.character)
     page.should have_content(flashcard.pinyin)

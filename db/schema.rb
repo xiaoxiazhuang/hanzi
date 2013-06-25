@@ -11,6 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20130625190355) do
+
+  create_table "flashcard_sets", :force => true do |t|
+    t.string   "name",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "flashcards", :force => true do |t|
+    t.string   "character",           :null => false
+    t.string   "pinyin",              :null => false
+    t.string   "english_translation", :null => false
+    t.integer  "flashcard_set_id",    :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
 
 end

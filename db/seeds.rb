@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+require_relative flashcards.csv
+
+Seeders::Flashcards.seed
+
+Flashcard.delete_all
+  open(flashcards.csv) do |flashcards|
+    flashcards.read.each_line do |flashcard|
+      character, pinyin, english_translation = flashcard.chomp.split(",")
+      Flashcard.create!(:character => character, :pinyin => pinyin, :english_translation => english_translation)
+  end
+end

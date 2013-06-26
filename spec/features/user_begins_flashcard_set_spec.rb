@@ -6,9 +6,6 @@ feature 'User begins flashcard set', %q{
   So I can start the flashcard set
 } do
 
-  # -User sees 'Start set' button on home page
-  # -User clicks 'Start set' button and is redirected to a flashcard within flashcard set
-
   scenario 'clicking on button on homepage starts the set' do
     set = FactoryGirl.create(:flashcard_set)
     flashcard = FactoryGirl.create(:flashcard, flashcard_set: set)

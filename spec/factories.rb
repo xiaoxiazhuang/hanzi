@@ -10,7 +10,7 @@ FactoryGirl.define do
     flashcard_set
     character '福'
     pinyin 'fu'
-    english_translation 'luck'
+    english_translation 'fortune'
   end
   
 end

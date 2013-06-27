@@ -1,5 +1,7 @@
 Hanzi::Application.routes.draw do
 
+  devise_for :users
+
   resources :flashcard_sets do
     resources :flashcards
   end

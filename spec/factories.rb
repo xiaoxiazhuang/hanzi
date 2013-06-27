@@ -9,8 +9,9 @@ FactoryGirl.define do
   factory :flashcard do
     flashcard_set
     character '福'
-    pinyin 'fu'
-    english_translation 'fortune'
+    sequence(:pinyin) { |n| "fu#{n}" }
+    sequence(:english_translation) { |n| "fortune#{n}" }
+    position 1
   end
   
 end

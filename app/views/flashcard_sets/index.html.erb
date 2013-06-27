@@ -1,3 +1,24 @@
+<div class="span25">
+
+  <h1>欢迎来汉子</h1>
+  <h2>Welcome to Hanzi</h2>
+
+
+  <div id="wrap">
+    <div id="left_col">
+        About Hanzi
+        <br>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend tellus nec quam tincidunt ultrices. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce suscipit fermentum tellus eget interdum. Integer ut molestie nisi, non lacinia augue. Nunc eget purus mollis quam tristique pharetra sed vitae eros. Sed nec sem venenatis, ultrices tellus eu, porta nisl. Nullam lectus nibh, lacinia non erat consequat, sagittis mattis nibh. Suspendisse scelerisque massa lectus, vel ornare mauris vehicula vel. Proin mollis aliquam velit sagittis luctus.</p>
+    </div>
+    <div id="right_col">
+        关于汉字
+        <br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend tellus nec quam tincidunt ultrices. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce suscipit fermentum tellus eget interdum. Integer ut molestie nisi, non lacinia augue. Nunc eget purus mollis quam tristique pharetra sed vitae eros. Sed nec sem venenatis, ultrices tellus eu, porta nisl. Nullam lectus nibh, lacinia non erat consequat, sagittis mattis nibh. Suspendisse scelerisque massa lectus, vel ornare mauris vehicula vel. Proin mollis aliquam velit sagittis luctus.</p>
+      </div>
+  </div>
+
 <% @flashcard_sets.each do |flashcard_set| %>
-  <%= link_to "Start Set", flashcard_set_flashcard_path(flashcard_set, flashcard_set.flashcards.first) %>
+  <%= link_to '<button type="button">Start Set</button>'.html_safe, flashcard_set_flashcard_path(flashcard_set, flashcard_set.flashcards.first) %>
 <% end %>
+ 
+</div>

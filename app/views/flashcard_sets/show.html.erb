@@ -1,0 +1,8 @@
+<div id="flashcard">
+  <% @flashcard_set.flashcards.each do |flashcard| %>
+    <%= flashcard.character %>
+    <%= flashcard.pinyin %>
+    <%= flashcard.english_translation %>
+    <%= link_to 'View Card', flashcard_set_flashcard_path(@flashcard_set, flashcard) %>
+  <% end %>
+</div>

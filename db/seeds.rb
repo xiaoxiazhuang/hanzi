@@ -1,19 +1,20 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# encoding: UTF-8 
 
-require_relative flashcards.csv
+require 'csv'
 
-Seeders::Flashcards.seed
+Flashcard.destroy_all
+FlashcardSet.destroy_all
 
-Flashcard.delete_all
-  open(flashcards.csv) do |flashcards|
-    flashcards.read.each_line do |flashcard|
-      character, pinyin, english_translation = flashcard.chomp.split(",")
-      Flashcard.create!(:character => character, :pinyin => pinyin, :english_translation => english_translation)
-  end
+flashcard_set = FlashcardSet.create(name: '1')
+
+CSV.foreach(File.join(Rails.root, 'flashcards.csv')) do |row|
+  flashcard = Flashcard.new
+  flashcard.character = row[0]
+  flashcard.pinyin = row[1]
+  flashcard.english_translation = row[2]
+  flashcard.position = row[3]
+  
+  flashcard.flashcard_set = flashcard_set
+
+  flashcard.save
 end

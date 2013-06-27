@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'User begins flashcard set', %q{
+feature 'User begins flashcard set', %{
   As a User
   I want to begin the flashcard set
   So I can start the flashcard set
@@ -12,7 +12,7 @@ feature 'User begins flashcard set', %q{
 
     visit root_path
 
-    click_link 'Start Set'
+    click_button 'Start Set'
 
     page.should have_content(flashcard.character)
     page.should have_content(flashcard.pinyin)

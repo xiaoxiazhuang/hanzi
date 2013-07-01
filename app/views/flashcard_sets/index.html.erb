@@ -6,19 +6,32 @@
 
   <div id="wrap">
     <div id="left_col">
+      <h3>
         About Hanzi
-        <br>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend tellus nec quam tincidunt ultrices. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce suscipit fermentum tellus eget interdum. Integer ut molestie nisi, non lacinia augue. Nunc eget purus mollis quam tristique pharetra sed vitae eros. Sed nec sem venenatis, ultrices tellus eu, porta nisl. Nullam lectus nibh, lacinia non erat consequat, sagittis mattis nibh. Suspendisse scelerisque massa lectus, vel ornare mauris vehicula vel. Proin mollis aliquam velit sagittis luctus.</p>
+      </h3>
+      <br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend tellus nec quam tincidunt ultrices. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce suscipit fermentum tellus eget interdum. Integer ut molestie nisi, non lacinia augue. Nunc eget purus mollis quam tristique pharetra sed vitae eros. Sed nec sem venenatis, ultrices tellus eu, porta nisl. Nullam lectus nibh, lacinia non erat consequat, sagittis mattis nibh. Suspendisse scelerisque massa lectus, vel ornare mauris vehicula vel. Proin mollis aliquam velit sagittis luctus.</p>
     </div>
     <div id="right_col">
+      <h3>
         关于汉字
-        <br>
+      </h3>
+      <br>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend tellus nec quam tincidunt ultrices. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce suscipit fermentum tellus eget interdum. Integer ut molestie nisi, non lacinia augue. Nunc eget purus mollis quam tristique pharetra sed vitae eros. Sed nec sem venenatis, ultrices tellus eu, porta nisl. Nullam lectus nibh, lacinia non erat consequat, sagittis mattis nibh. Suspendisse scelerisque massa lectus, vel ornare mauris vehicula vel. Proin mollis aliquam velit sagittis luctus.</p>
-      </div>
+    </div>
   </div>
 
-<% @flashcard_sets.each do |flashcard_set| %>
-  <%= link_to '<button type="button">Start Set</button>'.html_safe, flashcard_set_flashcard_path(flashcard_set, flashcard_set.flashcards.first) %>
+<% if user_signed_in? %>
+  <% @flashcard_sets.each do |flashcard_set| %>
+    <%= link_to '<button type="button">Start Set</button>'.html_safe, flashcard_set_flashcard_path(flashcard_set, flashcard_set.flashcards.first) %>
+  <% end %>
+    <%= link_to '<button type="button">Sign out</button>'.html_safe, destroy_user_session_path %>
+  <% else %>
+    <%= link_to '<button type="button">Sign up</button>'.html_safe, new_user_registration_path %>
+    <%= link_to '<button type="button">Sign in</button>'.html_safe, new_user_session_path %>
 <% end %>
-<%= link_to '<button type="button">Sign Up</button>'.html_safe, new_user_registration_path%>
+
+<%#= link_to '<button type="button">Create account</button>'.html_safe, new_user_registration_path%>
+<%#= link_to '<button type="button">Sign out</button>'.html_safe, destroy_user_session_path%>
+
 </div>

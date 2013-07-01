@@ -5,20 +5,28 @@ require 'csv'
 # Flashcard.destroy_all
 # FlashcardSet.destroy_all
 
+#establish a relationship between set names and their seed files
 set = {
   'Countries' => 'flashcards_countries.csv',
   'Basic' => 'flashcards.csv'
 }
 
 set.each do |set_name, filename|
+  #we find or create the flashcard set
   flashcard_set = FlashcardSet.find_or_create_by_name(set_name)
 
   position_counter = 0
+  #loop through each row
   CSV.foreach(File.join(Rails.root, filename)) do |row|
     position_counter += 1
-    unless flashcard = Flashcard.find_by_english_translation(row[0])
+    flashcard = Flashcard.find_by_english_translation(row[0])
+
+    #if the flashcard was not found in the db, we initialize a new one
+    if flashcard.nil?
       flashcard = Flashcard.new
     end
+
+    #update attributes
     flashcard.english_translation = row[0]
     flashcard.character = row[1]
     flashcard_set.pinyin = row[2]
@@ -35,4 +43,4 @@ end
 # For each csv file we find the file by 'filename' (the value in the key/value store) and for each row in the file--
 #   Executes creation of new flashcard if 'unless' conditional is false (i.e. if an english_translation cannot be found)
 #   a flashcard will be generated unless an english_translation cannot be found
-# Otherwise, creates a flashcard with the attributes listed and these are a part of the flashcard set.
+# Otherwise, creates a flashcard with the attributes listed and these are a part of the flashcard set. This is then saved.

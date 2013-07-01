@@ -1,9 +1,14 @@
-<%= @flashcard.character %>
-<%= @flashcard.pinyin %>
-<%= @flashcard.english_translation %>
+<div class="flashcard">
+  <%= @flashcard.character %>
+  <br>
+  <%= @flashcard.pinyin %>
+  <br>
+  <%= @flashcard.english_translation %>
+  <br>
 
-<% if @next_flashcard.nil? %>
-  <%= link_to '<button type="button">Next</button>'.html_safe, root_path %>
-<% else %>
-  <%= link_to '<button type="button">Next</button>'.html_safe, flashcard_set_flashcard_path(@set, @next_flashcard) %>
-<% end %>
+  <% if @next_flashcard.nil? %>
+    <%= link_to '<button type="button">Next</button>'.html_safe, root_path %>
+  <% else %>
+    <%= link_to '<button type="button">Next</button>'.html_safe, flashcard_set_flashcard_path(@set, @next_flashcard) %>
+  <% end %>
+</div>

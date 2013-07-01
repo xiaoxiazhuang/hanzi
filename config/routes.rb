@@ -7,6 +7,7 @@ Hanzi::Application.routes.draw do
   end
 
   root :to => 'flashcard_sets#index'
+  # flashcard_sets :to => 'flashcard_sets#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

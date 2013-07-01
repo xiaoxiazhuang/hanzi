@@ -22,6 +22,7 @@
   </div>
 
 <% if user_signed_in? %>
+  <%= link_to '<button type="button">Select a Flashcard Set</button>'.html_safe, flashcard_sets_path %>
   <% @flashcard_sets.each do |flashcard_set| %>
     <%= link_to '<button type="button">Start Set</button>'.html_safe, flashcard_set_flashcard_path(flashcard_set, flashcard_set.flashcards.first) %>
   <% end %>

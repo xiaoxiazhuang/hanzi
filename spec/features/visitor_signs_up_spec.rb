@@ -9,7 +9,7 @@ feature 'Visitor signs up', %{
 
   scenario "Visitor sees link to sign up on bottom of homepage" do
     visit root_path
-    expect(page).to have_content("Create account")
+    expect(page).to have_content('Sign up')
   end
 
   scenario "Visitor sees form to input login information" do
@@ -18,7 +18,7 @@ feature 'Visitor signs up', %{
     fill_in 'Password', :with => 'password'
     fill_in 'Password confirmation', :with => 'password'
     click_button 'Sign up'
-    expect(page).to have_content('Thanks for signing up!')
+    expect(page).to_not have_content('Sign up')
   end
 
   scenario "Visitor must input email address" do
@@ -27,7 +27,7 @@ feature 'Visitor signs up', %{
     fill_in 'Password', :with => 'password'
     fill_in 'Password confirmation', :with => 'password'
     click_button 'Sign up'
-    expect(page).to have_content('Please review the problems below:')
+    expect(page).to have_content("Email can't be blank")
   end
 
   scenario "Visitor must input password" do
@@ -36,7 +36,8 @@ feature 'Visitor signs up', %{
     fill_in 'Password', :with => ''
     fill_in 'Password confirmation', :with => 'password'
     click_button 'Sign up'
-    expect(page).to have_content('Please review the problems below:')
+    expect(page).to have_content("Password can't be blank")
+    expect(page).to have_content("Password doesn't match confirmation")
   end
   
   scenario "Visitor must input password confirmation" do
@@ -45,7 +46,7 @@ feature 'Visitor signs up', %{
     fill_in 'Password', :with => 'password'
     fill_in 'Password confirmation', :with => ''
     click_button 'Sign up'
-    expect(page).to have_content('Please review the problems below:')
+    expect(page).to have_content("Password doesn't match confirmation")
   end
 
   # scenario "Visitor clicks 'sign up' to save information" do
@@ -53,8 +54,8 @@ feature 'Visitor signs up', %{
   #   fill_in 'Email', :with => 'email@email.com'
   #   fill_in 'Password', :with => 'password'
   #   fill_in 'Password confirmation', :with => 'password'
-  #   click_button 'Create account'
-  #   expect(page).to have_content('Thanks for signing up!')
+  #   click_button 'Sign up'
+  #   expect(page).to_not have_content("Sign up")
   # end
 
   # scenario "Visitor sees a message that they have signed up"
@@ -65,7 +66,7 @@ feature 'Visitor signs up', %{
     fill_in 'Password', :with => 'password'
     fill_in 'Password confirmation', :with => 'password'
     click_button 'Sign up'
-    expect(page).to_not have_selector("input[type=submit][value='Sign up']")
+    expect(page).to_not have_content("Sign up")
   end
 
   # scenario "Visitor directed to dashboard after signing up" do

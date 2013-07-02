@@ -4,7 +4,7 @@ require 'factory_girl_rails'
 feature 'User takes flashcard set', %q{
   As a User
   I want to take the flashcard set
-  So I can learn 10 Chinese characters 
+  So I can review an HSK level
   } do
 
   scenario 'clicking on button on homepage starts the set' do
@@ -12,12 +12,17 @@ feature 'User takes flashcard set', %q{
     flashcard = FactoryGirl.create(:flashcard, flashcard_set: set)
 
     visit root_path
-
-    click_link 'Start Set'
+    click_button 'Sign In'
+    save_and_open_page
+    fill_in 'Email', :with => 'email@email.com'
+    fill_in 'Password', :with => 'password'
+    click_button 'Sign In'
+    click_button 'Start Set'
 
     page.should have_content(flashcard.character)
     page.should have_content(flashcard.pinyin)
     page.should have_content(flashcard.english_translation)
+    page.should have_selector('button', value: "Next")
   end
 
   scenario "User sees all flashcards once during set" do

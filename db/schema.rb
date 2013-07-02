@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130627184421) do
+ActiveRecord::Schema.define(:version => 20130702181712) do
 
   create_table "flashcard_sets", :force => true do |t|
     t.string   "name",       :null => false
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20130627184421) do
   create_table "flashcards", :force => true do |t|
     t.string   "character",           :null => false
     t.string   "pinyin",              :null => false
-    t.string   "english_translation", :null => false
+    t.text     "english_translation", :null => false
     t.integer  "flashcard_set_id",    :null => false
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false

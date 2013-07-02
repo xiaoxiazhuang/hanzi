@@ -6,7 +6,10 @@ Hanzi::Application.routes.draw do
     resources :flashcards
   end
 
-  root :to => 'flashcard_sets#index'
+  resource :home, only: [:show]
+
+  root :to => 'home#show'
+
   # flashcard_sets :to => 'flashcard_sets#show'
 
   # The priority is based upon order of creation:

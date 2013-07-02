@@ -2,8 +2,8 @@
 
 require 'csv'
 
-# Flashcard.destroy_all
-# FlashcardSet.destroy_all
+Flashcard.destroy_all
+FlashcardSet.destroy_all
 
 #establish a relationship between set names and their seed files
 set = {
@@ -25,7 +25,8 @@ set.each do |set_name, filename|
   #loop through each row
   CSV.foreach(File.join(Rails.root, filename)) do |row|
     position_counter += 1
-    flashcard = Flashcard.find_by_english_translation(row[2])
+    flashcard = Flashcard.new
+    # flashcard = Flashcard.find_by_english_translation(row[2])
 
     #if the flashcard was not found in the db, we initialize a new one
     if flashcard.nil?

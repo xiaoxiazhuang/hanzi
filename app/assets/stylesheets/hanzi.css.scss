@@ -24,11 +24,44 @@ h3 {
 }
 
 fieldset {
-border: 1px solid black;
+width: 800px;
+margin: 0 auto;
+margin-top: 10%;
+border: 2px solid black;
 border-radius: 15px;
-padding: 10px;
+padding: 35px;
 text-align: center;
 width: 20em
+}
+
+.homepage {
+  text-align: center;
+}
+
+.button {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.flashcard_set {
+  width: 800px;
+  // margin: 0 auto;
+  font-family: 'Orienta', "KaiTi", "楷体", STKaiti, "华文楷体", sans-serif;
+  text-align: center;
+  font-size: 23px;
+ 
+ line-height: 38px;
+  line-height: 35px;
+  text-align: center;
+  margin-top: 10%;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 35px;
+ 
+}
+
+.flashcard_set_links {
+  margin: -10px;
 }
 
 .flashcard {
@@ -38,6 +71,11 @@ width: 20em
   text-align: center;
   margin: 0 auto;
   padding-top: 25%;
+}
+
+#back_button {
+  text-align: center;
+  padding: 20px;
 }
 
 #wrap {

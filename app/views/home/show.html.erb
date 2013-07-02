@@ -1,5 +1,5 @@
 
-<div class="span25">
+<div class="homepage">
 
   <h1>欢迎来汉子</h1>
   <h2>Welcome to Hanzi</h2>
@@ -22,6 +22,7 @@
     </div>
   </div>
 
+<div class="button">
 <% if user_signed_in? %>
   <%= link_to '<button type="button">Select a Flashcard Set</button>'.html_safe, flashcard_sets_path %>
     <%= link_to '<button type="button">Sign out</button>'.html_safe, destroy_user_session_path %>
@@ -29,12 +30,6 @@
     <%= link_to '<button type="button">Sign up</button>'.html_safe, new_user_registration_path %>
     <%= link_to '<button type="button">Sign in</button>'.html_safe, new_user_session_path %>
 <% end %>
-
-<%#= link_to '<button type="button">Create account</button>'.html_safe, new_user_registration_path%>
-<%#= link_to '<button type="button">Sign out</button>'.html_safe, destroy_user_session_path%>
-
-  <%# @flashcard_sets.each do |flashcard_set| %>
-    <%#= link_to '<button type="button">Start Set</button>'.html_safe, flashcard_set_flashcard_path(flashcard_set, flashcard_set.flashcards.first) %>
-  <%# end %>
+</div>
 
 </div>

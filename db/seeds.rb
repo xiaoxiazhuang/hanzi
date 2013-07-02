@@ -7,13 +7,13 @@ require 'csv'
 
 #establish a relationship between set names and their seed files
 set = {
-  'Countries' => 'flashcards_countries.csv',
-  'Basic' => 'flashcards.csv'
-  'HSK Level 1' => 'flashcards_hsk_level_1.csv'
-  'HSK Level 2' => 'flashcards_hsk_level_2.csv'
-  'HSK Level 3' => 'flashcards_hsk_level_3.csv'
-  'HSK Level 4' => 'flashcards_hsk_level_4.csv'
-  'HSK Level 5' => 'flashcards_hsk_level_5.csv'
+  # 'Countries' => 'flashcards_countries.csv',
+  # 'Basic' => 'flashcards.csv',
+  'HSK Level 1' => 'flashcards_hsk_level_1.csv',
+  'HSK Level 2' => 'flashcards_hsk_level_2.csv',
+  'HSK Level 3' => 'flashcards_hsk_level_3.csv',
+  'HSK Level 4' => 'flashcards_hsk_level_4.csv',
+  'HSK Level 5' => 'flashcards_hsk_level_5.csv',
   'HSK Level 6' => 'flashcards_hsk_level_6.csv'
 }
 
@@ -35,7 +35,7 @@ set.each do |set_name, filename|
     #update attributes
     flashcard.character = row[0]
     flashcard.pinyin = row[1]
-    flashcard_set.english_translation = row[2]
+    flashcard.english_translation = row[2]
     flashcard.position = row[3] || position_counter
     
     flashcard.flashcard_set = flashcard_set

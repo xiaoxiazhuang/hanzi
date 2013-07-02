@@ -23,6 +23,14 @@ h3 {
   line-height: 0em;
 }
 
+fieldset {
+border: 1px solid black;
+border-radius: 15px;
+padding: 10px;
+text-align: center;
+width: 20em
+}
+
 .flashcard {
   font-size: 45px;
   font-family: Georgia, "Times New Roman", "KaiTi", "楷体", STKaiti, "华文楷体", serif;

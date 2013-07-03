@@ -24,14 +24,14 @@ h3 {
 }
 
 fieldset {
-width: 800px;
-margin: 0 auto;
-margin-top: 10%;
-border: 2px solid black;
-border-radius: 15px;
-padding: 35px;
-text-align: center;
-width: 20em
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 10%;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 35px;
+  text-align: center;
+  width: 20em;
 }
 
 .homepage {
@@ -57,7 +57,7 @@ width: 20em
   border: 2px solid black;
   border-radius: 15px;
   padding: 35px;
- 
+
 }
 
 .flashcard_set_links {
@@ -65,17 +65,51 @@ width: 20em
 }
 
 .flashcard {
+  margin: 0 auto;
   font-size: 45px;
   font-family: Georgia, "Times New Roman", "KaiTi", "楷体", STKaiti, "华文楷体", serif;
   line-height: 2em;
   text-align: center;
-  margin: 0 auto;
   padding-top: 25%;
+  a {
+    text-decoration: none;
+  }
+}
+
+a.fill-div {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+
+#character {
+  font-size: 250px;
+}
+
+#pinyin {
+  font-size: 20px;
+  padding-top: 10%;
+}
+
+#english-translation {
+  font-size: 20px;
+  padding-top: 5px;
+  line-height: 35px;
 }
 
 #back_button {
   text-align: center;
   padding: 20px;
+}
+
+#back-to-flashcard-sets{
+  font-family: 'Orienta', sans-serif;
+  position: absolute;
+  margin-top: 20px;
+  margin-right: 30px;
+  top: 0;
+  right: 0;
 }
 
 #wrap {

@@ -1,6 +1,9 @@
 Hanzi::Application.routes.draw do
 
-  devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' end
+  devise_for :users, :skip => [:password]
+  as :user do 
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
 
   resources :flashcard_sets do
     resources :flashcards

@@ -4,8 +4,6 @@
       <p><%= flashcard_set.name %></p>
       <%= link_to '<button type="button">Start Set</button>'.html_safe, flashcard_set_flashcard_path(flashcard_set, flashcard_set.flashcards.first) %>
     <% end %>
-  </div>
-  <br>
   <p id="back_button"><%= link_to '<button type="button">Back to homepage</button>'.html_safe, root_path %>
   </p>
 </div>

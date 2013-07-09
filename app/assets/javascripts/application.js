@@ -14,3 +14,24 @@
 //= require bootstrap
 //= require jquery_ujs
 //= require_tree .
+
+$(function() {
+
+  $('a.character_link').popover();
+  $('a.pinyin_link').popover();
+  $('a.english_translation_link').popover();
+
+
+  $(".alert").delay(1500).fadeOut(1000);
+
+  // $("#view_sample_flashcard").click(function() {
+  //   $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+  //   return false;
+
+  //   $("button").click(function () {
+  //     $(this).toggleClass("active");
+  //   });
+
+  // });
+
+} );

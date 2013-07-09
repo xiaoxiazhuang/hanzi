@@ -19,9 +19,9 @@ h1 {
 }
 
 h2 {
-  font: 150px;
+  font-size: 50px;
   font-family: 'Orienta', "KaiTi", "楷体", STKaiti, "华文楷体", sans-serif;
-  padding-bottom: 50px;
+  padding-bottom: 75px;
   padding-top: 40px;
   text-align: center;
 }
@@ -35,7 +35,27 @@ h3 {
 
 .button {
   margin: 0 auto;
+  height: 400px;
   width: 800px;
+}
+
+.character_link{
+  color: black;
+}
+
+.character_link:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.english_translation_link{
+  color: black;
+  padding: 5%;
+}
+
+.english_translation_link:hover {
+  color: black;
+  text-decoration: none;
 }
 
 .flashcard {
@@ -69,6 +89,22 @@ h3 {
   text-align: center;
 }
 
+.pinyin_link{
+  color: black;
+  padding: 5%;
+}
+
+.pinyin_link:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.popover-content {
+  font-size: 13px;
+  line-height: 20px;
+  text-align: center;
+}
+
 .wrap {
   height: 110px;
   margin: 0 auto;
@@ -77,10 +113,10 @@ h3 {
 }
 
 a.fill-div {
-    display: block;
-    height: 100%;
-    text-decoration: none;
-    width: 100%;
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  width: 100%;
 }
 
 #back_button {
@@ -111,8 +147,14 @@ a.fill-div {
    float: left;
    font-size: 15px;
    padding-bottom: 20px;
-   text-align: justify;
+   text-align: center;
    width: 300px;
+}
+
+#link_to_top {
+  color: black;
+  font-size: 18px;
+  padding: 5%;
 }
 
 #pinyin {
@@ -128,3 +170,15 @@ a.fill-div {
    text-align: center;
    width: 300px;
 }
+
+#sample_flashcard {
+  font-size: 45px;
+  font-family: Georgia, "Times New Roman", "KaiTi", "楷体", STKaiti, "华文楷体", serif;
+  height: 400px;
+  line-height: 2em;
+  margin: 0 auto;
+  padding-bottom: 25%;
+  padding-top: 25%;
+  text-align: center;
+}
+

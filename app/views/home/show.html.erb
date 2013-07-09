@@ -22,22 +22,24 @@
       <%= link_to '<button type="button">Sign up</button>'.html_safe, new_user_registration_path %>
       <%= link_to '<button type="button">Sign in</button>'.html_safe, new_user_session_path %>
       <%= link_to '<button type="button">Sample flashcard</button>'.html_safe, root_path(:anchor => 'sample_flashcard') %>
+    <% end %>
+  </div>
 
-      <div id="sample_flashcard">
-        <div id="character">
-          <%= link_to "学习", "#character_explanation", class: "character_link", title: "These are characters.", "data-content" => "Chraracters are logograms used in the writing of Chinese. Here, the characters '学' ('to study/learn') and '习' ('to practice') are combined to form '学习'.", rel: "popover" %>
-        </div>
-        <div id="pinyin">
-          <%= link_to "xue2 xi2", "#character_explanation", class: "pinyin_link", title: "This is the pinyin.","data-content" => "Pinyin refers to the romanized spelling of Chinese characters. The numbers at the end of 'xue' and 'xi' indicate the tone.", rel: "popover" %>
-        </div>
-        <div id="english-translation">
-          <%= link_to "to learn; to study", "#english_translation", class: "english_translation_link", title: "This is the English translation", "data-content" => "This is the English translation of the characters above.", rel: "popover" %>
-        </div>
-        <div id="link_to_top">
-          <%= link_to "Back to top", "#" %>
-        </div>
+  <div id="sample_flashcard">
+    <% if user_signed_in? %>
+    <% else %>
+      <div id="character">
+        <%= link_to "学习", "#character_explanation", class: "character_link", title: "These are characters.", "data-content" => "Chraracters are logograms used in the writing of Chinese. Here, the characters '学' ('to study/learn') and '习' ('to practice') are combined to form '学习'.", rel: "popover" %>
       </div>
-
+      <div id="pinyin">
+        <%= link_to "xue2 xi2", "#character_explanation", class: "pinyin_link", title: "This is the pinyin.","data-content" => "Pinyin refers to the romanized spelling of Chinese characters. The numbers at the end of 'xue' and 'xi' indicate the tone.", rel: "popover" %>
+      </div>
+      <div id="english-translation">
+        <%= link_to "to learn; to study", "#english_translation", class: "english_translation_link", title: "This is the English translation", "data-content" => "This is the English translation of the characters above. Some nouns may also contain that noun's measure word, which is a word used in combination with a numeral to indicate an amount of the noun.", rel: "popover" %>
+      </div>
+      <div id="link_to_top">
+        <%= link_to "Back to top", "#" %>
+      </div>
     <% end %>
   </div>
 </div>
@@ -49,4 +51,18 @@
     $('a.pinyin_link').popover();
     $('a.english_translation_link').popover();
   });
+
+  $(document).ready(function(){
+    resizeDiv();
+  });
+
+  window.onresize = function(event) {
+      resizeDiv();
+  };
+
+  function resizeDiv() {
+      vpw = $(window).width(); 
+      vph = $(window).height(); 
+      $('#somediv').css({'height': vph + 'px'});
+  };
 </script>

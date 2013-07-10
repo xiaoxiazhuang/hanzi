@@ -1,4 +1,4 @@
-== Welcome to Hanzi! ==
+== Welcome to Hanzi!
 
 Hanzi is a flashcard system I'm building for myself to study Chinese characters.
 

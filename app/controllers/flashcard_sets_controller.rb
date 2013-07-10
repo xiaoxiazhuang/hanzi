@@ -1,4 +1,6 @@
 class FlashcardSetsController < ApplicationController
+  before_filter :authenticate_user!
+  
   def index
     @flashcard_sets = FlashcardSet.all
   end

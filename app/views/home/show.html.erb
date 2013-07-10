@@ -1,28 +1,31 @@
 <div class="homepage">
-  <h1>欢迎来汉字</h1>
-  <h2>Welcome to Hanzi</h2>
-  <div class="wrap">
-    <div id="left_col">
-      <h3>About Hanzi</h3>
-      <br>
-        <p>Hanzi is a browser-based educational tool to learn Chinese characters.</p>
+  <div id="welcome">
+    <h1>欢迎来汉字</h1>
+    <h2>Welcome to Hanzi</h2>
+    <div class="wrap">
+      <div id="left_col">
+        <h3>About Hanzi</h3>
+        <br>
+          <p>Hanzi is a browser-based educational tool to learn Chinese characters.</p>
+      </div>
+      <div id="right_col">
+        <h3>关于汉字</h3>
+        <br>
+          <p>汉字是一个以浏览器为媒介学习汉字的工具.</p>
+      </div>
     </div>
-    <div id="right_col">
-      <h3>关于汉字</h3>
-      <br>
-        <p>汉字是一个以浏览器为媒介学习汉字的工具.</p>
-    </div>
-  </div>
 
-  <div class="button">
-    <% if user_signed_in? %>
-      <%= link_to '<button type="button">Select a Flashcard Set</button>'.html_safe, flashcard_sets_path %>
-      <%= link_to '<button type="button">Sign out</button>'.html_safe, destroy_user_session_path %>
-    <% else %>
-      <%= link_to '<button type="button">Sign up</button>'.html_safe, new_user_registration_path %>
-      <%= link_to '<button type="button">Sign in</button>'.html_safe, new_user_session_path %>
-      <%= link_to '<button type="button">Sample flashcard</button>'.html_safe, root_path(:anchor => 'sample_flashcard') %>
-    <% end %>
+  
+    <div class="button">
+      <% if user_signed_in? %>
+        <%= link_to '<button type="button">Select a Flashcard Set</button>'.html_safe, flashcard_sets_path %>
+        <%= link_to '<button type="button">Sign out</button>'.html_safe, destroy_user_session_path %>
+      <% else %>
+        <%= link_to '<button type="button">Sign up</button>'.html_safe, new_user_registration_path %>
+        <%= link_to '<button type="button">Sign in</button>'.html_safe, new_user_session_path %>
+        <%= link_to '<button type="button">Sample flashcard</button>'.html_safe, root_path(:anchor => 'sample_flashcard') %>
+      <% end %>
+    </div>
   </div>
 
   <div id="sample_flashcard">

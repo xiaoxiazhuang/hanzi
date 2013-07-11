@@ -1,7 +1,13 @@
 == Welcome to Hanzi!
 
-Hanzi is a flashcard system I'm building for myself to study Chinese characters.
+Hanzi is a browser-based educational tool to learn Chinese characters.
 
 It's a work in progress situation as I'm learning Ruby, HTML, CSS, databases, and the Rails ecosystem.
 
-Many thanks to the folks at Launch Academy for providing invaluable support.
+== Under the Hood
+
+(Coming soon!)
+
+== Gratitude
+
+I wouldn't have been able to do this without the invaluable support of @LaunchAcademy and in particular, @atsheehan.

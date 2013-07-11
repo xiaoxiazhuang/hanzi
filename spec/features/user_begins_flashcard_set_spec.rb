@@ -1,7 +1,8 @@
 require 'spec_helper'
+require 'factory_girl_rails'
 
-feature 'User begins flashcard set', %{
-  As a User
+feature 'Signed in user begins flashcard set', %{
+  As a signed in user
   I want to begin the flashcard set
   So I can start the flashcard set
 } do
@@ -10,8 +11,11 @@ feature 'User begins flashcard set', %{
     set = FactoryGirl.create(:flashcard_set)
     flashcard = FactoryGirl.create(:flashcard, flashcard_set: set)
 
-    visit root_path
-
+    visit new_user_session_path
+    fill_in 'Email', :with => "email@email.com"
+    fill_in 'Password', :with => "password"
+    click_button 'Sign in'
+    click_button 'Select a Flashcard Set'
     click_button 'Start Set'
 
     page.should have_content(flashcard.character)

@@ -9,7 +9,7 @@ FactoryGirl.define do
   end
 
   factory :flashcard_set do
-    name 'foo'
+    name 'HSK Level 1'
   end
 
   factory :flashcard do
